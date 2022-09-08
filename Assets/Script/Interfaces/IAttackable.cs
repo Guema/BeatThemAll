@@ -4,7 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public interface IAttackable
+public partial class HealthScript
 {
+    public interface IAttackable
+    {
 
+    }
 }
+

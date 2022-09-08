@@ -5,10 +5,15 @@ using NaughtyAttributes;
 
 [SelectionBase]
 [RequireComponent(typeof(HealthScript))]
-public class UnitScript : MonoBehaviour, IAttackable, IHasHealth
+public class UnitScript : MonoBehaviour, HealthScript.IAttackable, IHasHealth
 {
 
     [SerializeField, ReadOnly] HealthScript _healthScript;
+
+    [SerializeField, BoxGroup("Graphics")] Animator _animator;
+    [SerializeField, BoxGroup("Physics")] ColliderListener2D _hitboxListener2D;
+
+
 
 #if UNITY_EDITOR
     /// <summary>
@@ -25,6 +30,9 @@ public class UnitScript : MonoBehaviour, IAttackable, IHasHealth
     void Init()
     {
         _healthScript = GetComponent<HealthScript>();
+
+        _animator = gameObject.transform.Find("Render").GetComponentInChildren<Animator>() ?? gameObject.GetComponentInChildren<Animator>();
+        _hitboxListener2D = gameObject.transform.Find("Hitbox").GetComponentInChildren<ColliderListener2D>() ?? gameObject.GetComponentInChildren<ColliderListener2D>();
     }
 
 
@@ -35,6 +43,15 @@ public class UnitScript : MonoBehaviour, IAttackable, IHasHealth
     void Start()
     {
         Init();
+    }
+
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+
     }
 
 
