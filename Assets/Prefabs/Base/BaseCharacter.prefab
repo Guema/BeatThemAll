@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5705338074012807760}
   - component: {fileID: 5705338074012807761}
+  - component: {fileID: 3128137449498907684}
   m_Layer: 3
   m_Name: BaseCharacter
   m_TagString: Player
@@ -55,6 +56,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &3128137449498907684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5705338074012807775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ad5b944e71f2743a55fa6ff2285942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthbar: {fileID: 0}
+  _isDead: 0
+  _maxHealth: 100
+  _currentHealthPercent: 1
 --- !u!1 &5705338074142692999
 GameObject:
   m_ObjectHideFlags: 0
