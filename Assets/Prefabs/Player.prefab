@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5705338074012807762}
   - component: {fileID: 7540746516723664526}
   - component: {fileID: 5503331675115006670}
+  - component: {fileID: 3128137449498907684}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -136,6 +137,22 @@ MonoBehaviour:
   _anim: {fileID: 5705338075832837365}
   _attackAction: {fileID: 8471007204282934776, guid: 12fb268336c69b64fa18bbd2066f6b38, type: 3}
   _attackSlowTime: 0.5
+--- !u!114 &3128137449498907684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5705338074012807775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ad5b944e71f2743a55fa6ff2285942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthbar: {fileID: 0}
+  _isDead: 0
+  _maxHealth: 100
+  _currentHealthPercent: 1
 --- !u!1 &5705338074142692999
 GameObject:
   m_ObjectHideFlags: 0
