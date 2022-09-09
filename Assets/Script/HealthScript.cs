@@ -5,13 +5,12 @@ using UnityEngine;
 using NaughtyAttributes;
 
 
-public class HealthScript : MonoBehaviour
+public partial class HealthScript : MonoBehaviour
 {
 
     [SerializeField] bool _isDead = false;
     [SerializeField] int _maxHealth = 100;
     [SerializeField, Range(0f, 1f)] float _currentHealthPercent = 1f;
-
 
 
 
