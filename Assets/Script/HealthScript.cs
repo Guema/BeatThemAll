@@ -39,12 +39,12 @@ public partial class HealthScript : MonoBehaviour
         return (float)(value / _maxHealth);
     }
 
-    public void DealDamage(uint damage)
+    public void DealDamage(int damage)
     {
         if (_isDead)
             return;
         int previousHealth = currentHealth;
-        currentHealth -= (int)Mathf.Min(damage, currentHealth);
+        currentHealth -= (int)Mathf.Min(Mathf.Abs(damage), currentHealth);
         _isDead = _currentHealthPercent == 0f;
 
         OnCurrentHealthChanged.Invoke(previousHealth, currentHealth);
@@ -52,13 +52,13 @@ public partial class HealthScript : MonoBehaviour
             OnDie.Invoke();
     }
 
-    public void Heal(uint healthToRestore)
+    public void Heal(int healthToRestore)
     {
         if (_isDead)
             return;
 
         int previousHealth = currentHealth;
-        currentHealth += (int)MathF.Min(healthToRestore, maxHealth - currentHealth);
+        currentHealth += (int)MathF.Min(Mathf.Abs(healthToRestore), maxHealth - currentHealth);
 
         OnCurrentHealthChanged.Invoke(previousHealth, currentHealth);
     }
