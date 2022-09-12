@@ -5,12 +5,19 @@ public class CollectableBrain : MonoBehaviour
     [SerializeField] LayerMask _CanPickUp;
     [SerializeField] CollectableStats _stats;
 
+    private int _usesCount;
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (_CanPickUp == (_CanPickUp | (1 << col.gameObject.layer)))
         {
             PickUp(col);
         }
+    }
+
+    void Start()
+    {
+        _usesCount = _stats.usesAmount;
     }
 
     void PickUp(Collider2D col)
@@ -20,6 +27,7 @@ public class CollectableBrain : MonoBehaviour
         ScoreScript s = p.GetComponent<ScoreScript>();
         h.Heal(_stats.healAmount);
         //s.Add(_stats.scoreAmount);
-        GameObject.Destroy(this.gameObject);
+
+        if (--_usesCount <= 0) GameObject.Destroy(this.gameObject);
     }
 }
