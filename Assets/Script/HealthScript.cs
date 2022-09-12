@@ -47,9 +47,9 @@ public partial class HealthScript : MonoBehaviour
         currentHealth -= (int)Mathf.Min(Mathf.Abs(damage), currentHealth);
         _isDead = _currentHealthPercent == 0f;
 
-        OnCurrentHealthChanged.Invoke(previousHealth, currentHealth);
+        OnCurrentHealthChanged?.Invoke(previousHealth, currentHealth);
         if (isDead)
-            OnDie.Invoke();
+            OnDie?.Invoke();
     }
 
     public void Heal(int healthToRestore)
@@ -60,7 +60,7 @@ public partial class HealthScript : MonoBehaviour
         int previousHealth = currentHealth;
         currentHealth += (int)MathF.Min(Mathf.Abs(healthToRestore), maxHealth - currentHealth);
 
-        OnCurrentHealthChanged.Invoke(previousHealth, currentHealth);
+        OnCurrentHealthChanged?.Invoke(previousHealth, currentHealth);
     }
 
     public void Kill()
@@ -69,8 +69,8 @@ public partial class HealthScript : MonoBehaviour
         _isDead = true;
         currentHealth = 0;
 
-        OnCurrentHealthChanged.Invoke(previousHealth, currentHealth);
-        OnDie.Invoke();
+        OnCurrentHealthChanged?.Invoke(previousHealth, currentHealth);
+        OnDie?.Invoke();
     }
 
 }
