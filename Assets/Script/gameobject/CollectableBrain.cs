@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CollectableBrain : MonoBehaviour
 {
     [SerializeField] LayerMask _CanPickUp;
     [SerializeField] CollectableStats _stats;
-    //[SerializeField,Range(0,100)] int _healAmount;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -17,11 +15,11 @@ public class CollectableBrain : MonoBehaviour
 
     void PickUp(Collider2D col)
     {
-        Debug.Log("pickup DONE");
-
         GameObject p = col.GetComponentInParent<PlayerTag>().gameObject;
         HealthScript h = p.GetComponent<HealthScript>();
+        ScoreScript s = p.GetComponent<ScoreScript>();
         h.Heal(_stats.healAmount);
+        //s.Add(_stats.scoreAmount);
         GameObject.Destroy(this.gameObject);
     }
 }
