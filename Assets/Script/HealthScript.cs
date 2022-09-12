@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 
 public partial class HealthScript : MonoBehaviour
 {
-    [SerializeField] HealthBar _healthbar;
     [SerializeField] bool _isDead = false;
     [SerializeField] int _maxHealth = 100;
     [SerializeField, Range(0f, 1f)] float _currentHealthPercent = 1f;
 
+    public event UnityAction<int, int> OnCurrentHealthChanged;
+    public event UnityAction<int, int> OnMaxHealthChanged;
+    public event UnityAction<int> OnHealthReset;
+    public event UnityAction OnDie;
 
     public bool isDead
     {
@@ -34,43 +39,38 @@ public partial class HealthScript : MonoBehaviour
         return (float)(value / _maxHealth);
     }
 
-    [Button("Test Damage")]
-    public void DealDamage(uint damage = 10)
+    public void DealDamage(uint damage)
     {
         if (_isDead)
             return;
-
+        int previousHealth = currentHealth;
         currentHealth -= (int)Mathf.Min(damage, currentHealth);
         _isDead = _currentHealthPercent == 0f;
-        UpdateHealthBar(_currentHealthPercent);
+
+        OnCurrentHealthChanged.Invoke(previousHealth, currentHealth);
+        if (isDead)
+            OnDie.Invoke();
     }
 
-    [Button("Test Heal")]
-    public void Heal(uint healthToRestore = 10)
+    public void Heal(uint healthToRestore)
     {
         if (_isDead)
             return;
 
+        int previousHealth = currentHealth;
         currentHealth += (int)MathF.Min(healthToRestore, maxHealth - currentHealth);
-        UpdateHealthBar(_currentHealthPercent);
+
+        OnCurrentHealthChanged.Invoke(previousHealth, currentHealth);
     }
 
     public void Kill()
     {
+        int previousHealth = currentHealth;
+        _isDead = true;
+        currentHealth = 0;
 
-    }
-    
-    private void OnValidate()
-    {
-        UpdateHealthBar(_currentHealthPercent);
-    }
-
-    private void UpdateHealthBar(float normalized)
-    {
-        if (_healthbar != null)
-        {
-            _healthbar.SetHealthBar(normalized);
-        }
+        OnCurrentHealthChanged.Invoke(previousHealth, currentHealth);
+        OnDie.Invoke();
     }
 
 }
