@@ -35,23 +35,23 @@ public partial class HealthScript : MonoBehaviour
     }
 
     [Button("Test Damage")]
-    public void DealDamage(uint damage = 10)
+    public void DealDamage(int damage = 10)
     {
         if (_isDead)
             return;
 
-        currentHealth -= (int)Mathf.Min(damage, currentHealth);
+        currentHealth -= Mathf.Min(Mathf.Abs(damage), currentHealth);
         _isDead = _currentHealthPercent == 0f;
         UpdateHealthBar(_currentHealthPercent);
     }
 
     [Button("Test Heal")]
-    public void Heal(uint healthToRestore = 10)
+    public void Heal(int healthToRestore = 10)
     {
         if (_isDead)
             return;
 
-        currentHealth += (int)MathF.Min(healthToRestore, maxHealth - currentHealth);
+        currentHealth += (int)MathF.Min(Mathf.Abs(healthToRestore), maxHealth - currentHealth);
         UpdateHealthBar(_currentHealthPercent);
     }
 

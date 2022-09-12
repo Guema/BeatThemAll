@@ -151,10 +151,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 5705338075832837364, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 5705338075832837365, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
       propertyPath: m_Controller
       value: 
