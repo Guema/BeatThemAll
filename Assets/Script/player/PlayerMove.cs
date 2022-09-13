@@ -13,14 +13,11 @@ public partial class PlayerMove : MonoBehaviour
     [SerializeField, Range(0f, 10f)] float _attackMoveSpeed;
     [SerializeField, Range(0f, 2f)] float _jumpCooldown;
     private Rigidbody2D _rb;
-    private Vector2 _moveDir;
-    private float _moveSpeed;
     private bool _isSprinting;
     private bool _isAttacking;
 
     private void Reset()
     {
-        _moveSpeed = 0;
         _runSpeed = 4f;
         _sprintSpeed = 8f;
         _isSprinting = false;
@@ -57,34 +54,44 @@ public partial class PlayerMove : MonoBehaviour
         _jumpAction.action.started -= JumpingStarted;
     }
 
-    void Update()
-    {
-
-    }
-
     void FixedUpdate()
     {
-        _moveDir = GetMoveDir();
-        _moveSpeed = GetMoveSpeed();
-        _rb.MovePosition(_rb.position + (_moveDir * _moveSpeed * Time.fixedDeltaTime));
+        _rb.MovePosition(_rb.position + (GetMoveDir() * GetMoveSpeed() * Time.fixedDeltaTime));
     }
 
     void RunStarted(InputAction.CallbackContext cc)
     {
-        _moveDir = cc.ReadValue<Vector2>();
-        _anim.SetBool("isWalking", true);
+        if (cc.ReadValue<Vector2>().magnitude > 0.1f)
+        {
+            _anim.SetBool("isWalking", true);
+            _anim.SetBool("isSprinting", _isSprinting ? true : false);
+        }
+
+        if (cc.ReadValue<Vector2>().x > 0.1f || cc.ReadValue<Vector2>().x < -0.1f)
+        {
+            transform.localScale = new Vector3(cc.ReadValue<Vector2>().x > 0.1f ? 1f : -1, transform.localScale.y, transform.localScale.z);
+        }
     }
 
     void RunPerformed(InputAction.CallbackContext cc)
     {
-        _moveDir = cc.ReadValue<Vector2>();
-        _anim.SetBool("isWalking", true);
+        if (cc.ReadValue<Vector2>().magnitude > 0.1f)
+        {
+            _anim.SetBool("isWalking", true);
+            _anim.SetBool("isSprinting", _isSprinting ? true : false);
+        }
+
+        if (cc.ReadValue<Vector2>().x > 0.1f || cc.ReadValue<Vector2>().x < -0.1f)
+        {
+            transform.localScale = new Vector3(cc.ReadValue<Vector2>().x > 0.1f ? 1f : -1, transform.localScale.y, transform.localScale.z);
+        }
     }
 
     void RunCanceled(InputAction.CallbackContext cc)
     {
-        _moveDir = Vector2.zero;
         _anim.SetBool("isWalking", false);
+        _anim.SetBool("isSprinting", false);
+        _isSprinting = false;
     }
 
     void SprintStarted(InputAction.CallbackContext cc)
@@ -122,8 +129,7 @@ public partial class PlayerMove : MonoBehaviour
         }
 
         // update
-        _moveSpeed = GetMoveSpeed();
-        _anim.SetBool("isSprinting", _moveDir.magnitude != 0 ? true : false);
+        _anim.SetBool("isSprinting", GetMoveDir().magnitude != 0 ? true : false);
     }
 
     float GetMoveSpeed()
