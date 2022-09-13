@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterHydrant
+  m_Name: Hydrant
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,15 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 648004626, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
-    - time: 0.25
+    - time: 0.16666667
       value: {fileID: 764155305, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
-    - time: 0.5
+    - time: 0.31666666
       value: {fileID: -1562840017, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
-    - time: 0.75
+    - time: 0.48333332
+      value: {fileID: -469713107, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
+    - time: 0.6666667
       value: {fileID: -1710133871, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
-    - time: 0.9166667
+    - time: 0.8333333
       value: {fileID: 1926037015, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
     - time: 1
       value: {fileID: 648004626, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
@@ -53,6 +55,7 @@ AnimationClip:
     - {fileID: 648004626, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
     - {fileID: 764155305, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
     - {fileID: -1562840017, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
+    - {fileID: -469713107, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
     - {fileID: -1710133871, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
     - {fileID: 1926037015, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}
     - {fileID: 648004626, guid: 209f1db7ec8a84e99b64ce9dc9efc8a1, type: 3}

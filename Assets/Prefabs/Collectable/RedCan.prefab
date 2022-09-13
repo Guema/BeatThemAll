@@ -74,12 +74,12 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.7, y: 1.5}
-  m_Direction: 0
+  m_Size: {x: 0.3, y: 0.3}
+  m_Direction: 1
 --- !u!1 &5897390767782980828
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 5897390767782980828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.038962, y: -1.2985129, z: 0}
-  m_LocalScale: {x: 0.4078, y: 0.4078, z: 0.4078}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 529134391982244927}
@@ -140,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 6612087295754855540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 16.346, y: 16.346, z: 16.346}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6883187591061183483}
@@ -208,7 +208,7 @@ Animator:
   m_GameObject: {fileID: 6612087295754855540}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8ae71cb56ad97a74192ff830c468e7fe, type: 2}
+  m_Controller: {fileID: 22100000, guid: b647f05d6feb0f344a79fb800d6f571b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
