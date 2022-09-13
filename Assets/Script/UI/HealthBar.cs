@@ -72,7 +72,6 @@ public class HealthBar : MonoBehaviour
             {
                 var t = Mathf.InverseLerp(startTime, endTime, Time.time);
                 var temp = Mathf.Lerp(previous, (float)current / (float)_healthScript.maxHealth, _barSmoothing.Evaluate(t));
-                Debug.Log(temp);
                 _slider.value = temp;
                 yield return _waitForEndOfFrame;
             } while (Time.time < endTime);
