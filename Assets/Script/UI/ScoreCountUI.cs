@@ -11,7 +11,12 @@ public class ScoreCountUI : MonoBehaviour
     void Awake()
     {
         _scorecount = 0;
+    }
+
+    void Start()
+    {
         _txt = GetComponentInChildren<TextMeshProUGUI>();
+        ScoreScript.instance.OnScoreChanged += UpdateScore;
     }
 
     public void SetLifecount(int lifecount)
@@ -19,9 +24,20 @@ public class ScoreCountUI : MonoBehaviour
         _txt.text = lifecount.ToString();
     }
 
+    public void SetScore(int score)
+    {
+        _scorecount = score;
+        _txt.SetText(score.ToString());
+    }
+
     private void OnValidate()
     {
         _txt = GetComponentInChildren<TextMeshProUGUI>();
         _txt.text = _scorecount.ToString();
+    }
+
+    void UpdateScore(int before, int after)
+    {
+        SetScore(after);
     }
 }

@@ -32,7 +32,7 @@ public class ScoreScript : MonoBehaviour
 
     public static ScoreScript instance
     {
-        get => instance;
+        get => _instance;
     }
 
     public int score
@@ -51,13 +51,6 @@ public class ScoreScript : MonoBehaviour
     void Init()
     {
         _instance ??= this;
-
-        if (_instance != this)
-        {
-            DestroyImmediate(this);
-            throw new System.Exception($@"ScoreScript already exists. Only one allowed. 
-            Use 'ScoreScript.instance' to get the current ScoreScript");
-        }
     }
 
     /// <summary>
@@ -73,9 +66,8 @@ public class ScoreScript : MonoBehaviour
         uint previous_score = _score;
         _score += scoreToAdd;
 
-        OnScoreIncreased.Invoke((int)previous_score, (int)_score);
-        OnScoreChanged.Invoke((int)previous_score, (int)_score);
-
+        OnScoreIncreased?.Invoke((int)previous_score, (int)_score);
+        OnScoreChanged?.Invoke((int)previous_score, (int)_score);
     }
 
     public void SubstractScore(uint scoreToSubstract)
@@ -83,15 +75,15 @@ public class ScoreScript : MonoBehaviour
         uint previous_score = _score;
         this._score -= scoreToSubstract;
 
-        OnScoreDecreased.Invoke((int)previous_score, (int)_score);
-        OnScoreChanged.Invoke((int)previous_score, (int)_score);
+        OnScoreDecreased?.Invoke((int)previous_score, (int)_score);
+        OnScoreChanged?.Invoke((int)previous_score, (int)_score);
     }
 
     public void ResetScore(uint score = 0)
     {
         this._score = score;
 
-        OnScoreReseted.Invoke((int)score);
+        OnScoreReseted?.Invoke((int)score);
     }
 
 
