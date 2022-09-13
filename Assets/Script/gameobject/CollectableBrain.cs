@@ -25,8 +25,8 @@ public class CollectableBrain : MonoBehaviour
         GameObject p = col.GetComponentInParent<PlayerTag>().gameObject;
         HealthScript h = p.GetComponent<HealthScript>();
         ScoreScript s = p.GetComponent<ScoreScript>();
-        h.Heal(_stats.healAmount);
-        //s.Add(_stats.scoreAmount);
+        if (_stats.healAmount > 0) h.Heal(_stats.healAmount);
+        if (_stats.scoreAmount > 0) s.AddScore((uint)_stats.scoreAmount);
 
         if (--_usesCount <= 0) GameObject.Destroy(this.gameObject);
     }
