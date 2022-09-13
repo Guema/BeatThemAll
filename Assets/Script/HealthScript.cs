@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 
 public partial class HealthScript : MonoBehaviour
 {
-
     [SerializeField] bool _isDead = false;
     [SerializeField] int _maxHealth = 100;
     [SerializeField, Range(0f, 1f)] float _currentHealthPercent = 1f;
 
-
+    public event UnityAction<int, int> OnCurrentHealthChanged;
+    public event UnityAction<int, int> OnMaxHealthChanged;
+    public event UnityAction<int> OnHealthReset;
+    public event UnityAction OnDie;
 
     public bool isDead
     {
@@ -35,30 +39,38 @@ public partial class HealthScript : MonoBehaviour
         return (float)(value / _maxHealth);
     }
 
-    [Button("Test Damage")]
-    public void DealDamage(uint damage = 10)
+    public void DealDamage(int damage)
     {
         if (_isDead)
             return;
-
-        currentHealth -= (int)Mathf.Min(damage, currentHealth);
+        int previousHealth = currentHealth;
+        currentHealth -= (int)Mathf.Min(Mathf.Abs(damage), currentHealth);
         _isDead = _currentHealthPercent == 0f;
+
+        OnCurrentHealthChanged?.Invoke(previousHealth, currentHealth);
+        if (isDead)
+            OnDie?.Invoke();
     }
 
-    [Button("Test Heal")]
-    public void Heal(uint healthToRestore = 10)
+    public void Heal(int healthToRestore)
     {
         if (_isDead)
             return;
 
-        currentHealth += (int)MathF.Min(healthToRestore, maxHealth - currentHealth);
+        int previousHealth = currentHealth;
+        currentHealth += (int)MathF.Min(Mathf.Abs(healthToRestore), maxHealth - currentHealth);
+
+        OnCurrentHealthChanged?.Invoke(previousHealth, currentHealth);
     }
 
     public void Kill()
     {
+        int previousHealth = currentHealth;
+        _isDead = true;
+        currentHealth = 0;
 
+        OnCurrentHealthChanged?.Invoke(previousHealth, currentHealth);
+        OnDie?.Invoke();
     }
-
-
 
 }
