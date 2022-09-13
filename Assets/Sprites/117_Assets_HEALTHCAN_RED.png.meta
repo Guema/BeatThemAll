@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -108,9 +108,9 @@ TextureImporter:
       name: 117_Assets_HEALTHCAN_RED_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 10
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5beac6e9c7b0e4f418bd71be803c75e4
-      internalID: 570827072
+      spriteID: a97668db7a54c214d9847da9f0aa40a6
+      internalID: -929941261
       vertices: []
       indices: 
       edges: []
@@ -129,9 +129,9 @@ TextureImporter:
       name: 117_Assets_HEALTHCAN_RED_1
       rect:
         serializedVersion: 2
-        x: 19
+        x: 16
         y: 0
-        width: 10
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e46b23904eb6f474ea88d83a98fe21b6
-      internalID: -517604611
+      spriteID: 29c5657cbe896b84098aa72b336e9f9a
+      internalID: -1090449590
       vertices: []
       indices: 
       edges: []
@@ -150,9 +150,9 @@ TextureImporter:
       name: 117_Assets_HEALTHCAN_RED_2
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
-        width: 10
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a8cfc02ad098d24aa267afb8f54966c
-      internalID: -765112497
+      spriteID: 1c9dc4089caf76746b3ab7bc67b17de6
+      internalID: 1877792620
       vertices: []
       indices: 
       edges: []
@@ -171,9 +171,9 @@ TextureImporter:
       name: 117_Assets_HEALTHCAN_RED_3
       rect:
         serializedVersion: 2
-        x: 51
+        x: 48
         y: 0
-        width: 10
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1403168a50204340b39d5308d853a25
-      internalID: -883802514
+      spriteID: 733a214a9a6a4324d88867cffa68460f
+      internalID: 1841000868
       vertices: []
       indices: 
       edges: []
@@ -192,9 +192,9 @@ TextureImporter:
       name: 117_Assets_HEALTHCAN_RED_4
       rect:
         serializedVersion: 2
-        x: 67
+        x: 64
         y: 0
-        width: 10
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4234bdcd2555aa45af72e715ad56a02
-      internalID: 1882174392
+      spriteID: 40969054414887a43992688b0e9e1389
+      internalID: -171085321
       vertices: []
       indices: 
       edges: []
@@ -213,9 +213,9 @@ TextureImporter:
       name: 117_Assets_HEALTHCAN_RED_5
       rect:
         serializedVersion: 2
-        x: 83
+        x: 80
         y: 0
-        width: 10
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea0b58ffd8bfd92418d4488f5ec24b55
-      internalID: -312098845
+      spriteID: d9ef9405a27303842afbd982292c46af
+      internalID: 19953411
       vertices: []
       indices: 
       edges: []
@@ -234,9 +234,9 @@ TextureImporter:
       name: 117_Assets_HEALTHCAN_RED_6
       rect:
         serializedVersion: 2
-        x: 99
+        x: 96
         y: 0
-        width: 10
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -245,8 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b2057e9ab1c0044aaed455d06197b85
-      internalID: -2060581390
+      spriteID: 725cbf1724f3c1a4aa1968c4b46afb6d
+      internalID: 448687688
       vertices: []
       indices: 
       edges: []
@@ -255,9 +255,9 @@ TextureImporter:
       name: 117_Assets_HEALTHCAN_RED_7
       rect:
         serializedVersion: 2
-        x: 115
+        x: 112
         y: 0
-        width: 10
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0076cce2fd3e2994e825d8077b42b592
-      internalID: -78015602
+      spriteID: 3bfdc2e79096e2d419f9f82d95f991fb
+      internalID: 735313010
       vertices: []
       indices: 
       edges: []
@@ -276,9 +276,9 @@ TextureImporter:
       name: 117_Assets_HEALTHCAN_RED_8
       rect:
         serializedVersion: 2
-        x: 131
+        x: 128
         y: 0
-        width: 10
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -287,8 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9a39972a124ade43b35ce7feef8b20a
-      internalID: 299328586
+      spriteID: 6b45544640929d3458d9ecaa633d56d9
+      internalID: -1123381571
       vertices: []
       indices: 
       edges: []
@@ -304,15 +304,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      117_Assets_HEALTHCAN_RED_6: -2060581390
-      117_Assets_HEALTHCAN_RED_4: 1882174392
-      117_Assets_HEALTHCAN_RED_2: -765112497
-      117_Assets_HEALTHCAN_RED_3: -883802514
-      117_Assets_HEALTHCAN_RED_5: -312098845
-      117_Assets_HEALTHCAN_RED_1: -517604611
-      117_Assets_HEALTHCAN_RED_7: -78015602
-      117_Assets_HEALTHCAN_RED_8: 299328586
-      117_Assets_HEALTHCAN_RED_0: 570827072
+      117_Assets_HEALTHCAN_RED_6: 448687688
+      117_Assets_HEALTHCAN_RED_4: -171085321
+      117_Assets_HEALTHCAN_RED_2: 1877792620
+      117_Assets_HEALTHCAN_RED_3: 1841000868
+      117_Assets_HEALTHCAN_RED_5: 19953411
+      117_Assets_HEALTHCAN_RED_1: -1090449590
+      117_Assets_HEALTHCAN_RED_7: 735313010
+      117_Assets_HEALTHCAN_RED_8: -1123381571
+      117_Assets_HEALTHCAN_RED_0: -929941261
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
