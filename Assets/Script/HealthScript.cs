@@ -6,7 +6,7 @@ using NaughtyAttributes;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-
+[RequireComponent(typeof(UnitScript))]
 public partial class HealthScript : MonoBehaviour
 {
     [SerializeField] bool _isDead = false;
