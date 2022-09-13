@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
@@ -73,5 +74,12 @@ public class MenuScript : MonoBehaviour
             }
             _buttonPressed=false;
         }
+    }
+
+    public void Load()
+    {
+        SceneManager.LoadScene("SceneElliot");
+        _canva.gameObject.SetActive(false);
+        _menuOpen = false;
     }
 }
