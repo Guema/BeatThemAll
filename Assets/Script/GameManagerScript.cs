@@ -11,7 +11,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void Start()
     {
-        _enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList() ;
+        _enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
     }
     
 
