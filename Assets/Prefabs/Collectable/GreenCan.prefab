@@ -147,7 +147,6 @@ GameObject:
   m_Component:
   - component: {fileID: 782034187042548511}
   - component: {fileID: 2755255762087886626}
-  - component: {fileID: 4550819576304221692}
   m_Layer: 0
   m_Name: GreenCan
   m_TagString: Untagged
@@ -193,22 +192,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4550819576304221692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 782034187042548496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb76a809e8a100a42aa09c16c55f6880, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _CanPickUp:
-    serializedVersion: 2
-    m_Bits: 8
-  _stats: {fileID: 11400000, guid: 4526f2d2303c1a648b0fa81f79cc3ecf, type: 2}
 --- !u!1 &6621245039570712370
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3660697915568402828}
   - component: {fileID: 2868360895672602789}
+  - component: {fileID: 3663973842287745429}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
@@ -257,3 +241,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.4, y: 0.4}
   m_Direction: 1
+--- !u!114 &3663973842287745429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6621245039570712370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb76a809e8a100a42aa09c16c55f6880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _CanPickUp:
+    serializedVersion: 2
+    m_Bits: 8
+  _root: {fileID: 782034187042548496}
+  _stats: {fileID: 11400000, guid: 4526f2d2303c1a648b0fa81f79cc3ecf, type: 2}

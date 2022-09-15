@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Linq;
 using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
@@ -10,6 +11,7 @@ public class MenuScript : MonoBehaviour
     [SerializeField] InputActionReference _gameplayOpenMenuInput;
     [SerializeField] InputActionReference _menuCloseMenuInput;
     [SerializeField] Canvas _canva;
+    public List<GameObject> _enemies = new List<GameObject>();
     private PlayerInput _playerInput;
     bool _buttonPressed;
     bool _menuOpen;
@@ -50,6 +52,7 @@ public class MenuScript : MonoBehaviour
     void Start()
     {
         _menuOpen = false;
+        _enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
     }
 
     // Update is called once per frame
@@ -81,5 +84,6 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene("SceneElliot");
         _canva.gameObject.SetActive(false);
         _menuOpen = false;
+        _enemies.All(go => go == null || !go.activeInHierarchy);
     }
 }
