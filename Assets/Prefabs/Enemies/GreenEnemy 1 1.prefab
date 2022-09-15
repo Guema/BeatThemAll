@@ -67,6 +67,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenEnemy 1 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5705338074012807775, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5705338074142693016, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.211
+      objectReference: {fileID: 0}
     - target: {fileID: 5705338075832837364, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2298
