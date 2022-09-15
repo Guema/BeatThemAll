@@ -5,10 +5,13 @@ using UnityEngine;
 using NaughtyAttributes;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(UnitScript))]
 public partial class HealthScript : MonoBehaviour
 {
+    [SerializeField] Animator _anim;
+    [SerializeField] PlayerInput _playerInput;
     [SerializeField] bool _isDead = false;
     [SerializeField] int _maxHealth = 100;
     [SerializeField, Range(0f, 1f)] float _currentHealthPercent = 1f;
@@ -41,26 +44,35 @@ public partial class HealthScript : MonoBehaviour
 
     public void DealDamage(int damage)
     {
-        if (_isDead)
-            return;
+        if (_isDead) return;
+
         int previousHealth = currentHealth;
         currentHealth -= (int)Mathf.Min(Mathf.Abs(damage), currentHealth);
         _isDead = _currentHealthPercent == 0f;
 
         OnCurrentHealthChanged?.Invoke(previousHealth, currentHealth);
         if (isDead)
+        {
+            Die();
             OnDie?.Invoke();
+        }
     }
 
     public void Heal(int healthToRestore)
     {
-        if (_isDead)
-            return;
+        if (_isDead) return;
 
         int previousHealth = currentHealth;
         currentHealth += (int)MathF.Min(Mathf.Abs(healthToRestore), maxHealth - currentHealth);
 
         OnCurrentHealthChanged?.Invoke(previousHealth, currentHealth);
+    }
+
+    void Die()
+    {
+        _anim.SetBool("isDead", true);
+        _playerInput.SwitchCurrentActionMap("menu");
+        // display end menu + retry button
     }
 
     public void Kill()
