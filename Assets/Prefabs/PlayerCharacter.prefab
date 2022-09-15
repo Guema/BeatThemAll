@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8776458218005046907}
   - component: {fileID: 9214804153687715678}
-  - component: {fileID: 6101426715863892375}
+  - component: {fileID: 2249449941039061398}
   m_Layer: 3
   m_Name: Attack
   m_TagString: Untagged
@@ -47,9 +47,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.2, y: 0}
-  m_Size: {x: 1, y: 0.6}
+  m_Size: {x: 1.5, y: 1}
   m_Direction: 1
---- !u!114 &6101426715863892375
+--- !u!114 &2249449941039061398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,10 +58,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 584461393303822616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b462535caba0bc64d8f6588108f2bb47, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c6c0073a3a1d8c42b078a621df54cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targets: []
+  _colliders2D:
+  - {fileID: 9214804153687715678}
+  _onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  _onTriggerStay:
+    m_PersistentCalls:
+      m_Calls: []
+  _onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2647317563662532654
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,11 +198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5705338074012807760, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -54.59
       objectReference: {fileID: 0}
     - target: {fileID: 5705338074012807760, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.18
       objectReference: {fileID: 0}
     - target: {fileID: 5705338074012807760, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
       propertyPath: m_LocalPosition.z
@@ -262,6 +281,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5705338074012807775, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
   m_PrefabInstance: {fileID: 6604872075033902382}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5828445613557976722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478402134033665905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b462535caba0bc64d8f6588108f2bb47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unit: {fileID: 3015278068550806368}
+  _AttackTriggerZone: {fileID: 2249449941039061398}
+  _targets: []
 --- !u!114 &7246668822892746008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,3 +373,14 @@ MonoBehaviour:
   _sprintSpeed: 8
   _attackMoveSpeed: 1
   _jumpCooldown: 1
+--- !u!114 &3015278068550806368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8246463948605740622, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
+  m_PrefabInstance: {fileID: 6604872075033902382}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478402134033665905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3609657e75895e946bf9defd5fa71ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

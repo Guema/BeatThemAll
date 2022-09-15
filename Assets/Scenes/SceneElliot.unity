@@ -5280,7 +5280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243761225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.59636, y: -0.929507, z: -10}
+  m_LocalPosition: {x: -54.596375, y: -0.9268787, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8636,10 +8636,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1478402132365023704, guid: 07c016127c58b244faebf8e801495908, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 1478402134033665905, guid: 07c016127c58b244faebf8e801495908, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
@@ -8689,21 +8685,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7430053875104571900, guid: 07c016127c58b244faebf8e801495908, type: 3}
-      propertyPath: _attackAction
-      value: 
-      objectReference: {fileID: -5775429041561170056, guid: 12fb268336c69b64fa18bbd2066f6b38, type: 3}
-    - target: {fileID: 7954027982520303278, guid: 07c016127c58b244faebf8e801495908, type: 3}
-      propertyPath: _runAction
-      value: 
-      objectReference: {fileID: 3379518031137357880, guid: 12fb268336c69b64fa18bbd2066f6b38, type: 3}
-    - target: {fileID: 7954027982520303278, guid: 07c016127c58b244faebf8e801495908, type: 3}
-      propertyPath: _jumpAction
-      value: 
-      objectReference: {fileID: -8524641120573590680, guid: 12fb268336c69b64fa18bbd2066f6b38, type: 3}
-    - target: {fileID: 7954027982520303278, guid: 07c016127c58b244faebf8e801495908, type: 3}
-      propertyPath: _sprintAction
-      value: 
-      objectReference: {fileID: 730912522439210673, guid: 12fb268336c69b64fa18bbd2066f6b38, type: 3}
+      propertyPath: _attackZone._size.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430053875104571900, guid: 07c016127c58b244faebf8e801495908, type: 3}
+      propertyPath: _attackZone._size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430053875104571900, guid: 07c016127c58b244faebf8e801495908, type: 3}
+      propertyPath: _attackZone._offset.x
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07c016127c58b244faebf8e801495908, type: 3}
 --- !u!1 &2083189680
