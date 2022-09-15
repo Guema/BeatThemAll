@@ -33,6 +33,7 @@ public class AIController : MonoBehaviour
     void Reset()
     {
         _rigidBody2D = GetComponentInParent<Rigidbody2D>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     /// <summary>
@@ -61,6 +62,10 @@ public class AIController : MonoBehaviour
                     if (Vector3.Distance(this.transform.position, _target.transform.position) > WANTED_MAX_DISTANCE)
                     {
                         MoveAction();
+                    }
+                    else
+                    {
+                        AttackAction();
                     }
 
                 }
@@ -102,26 +107,53 @@ public class AIController : MonoBehaviour
         return Vector2.Distance(this.transform.position, _target.transform.position) < WANTED_MAX_DISTANCE;
     }
 
+    void StopCurrentBehaviour()
+    {
+        if (_currentBehaviour == null)
+            return;
+
+        StopCoroutine(_currentBehaviour);
+        _currentBehaviour = null;
+    }
+
     void MoveAction()
     {
-        void Ended()
-        {
-            StopCoroutine(_currentBehaviour);
-            _currentBehaviour = null;
-        }
-
-        IEnumerator MoveCoroutine()
+        IEnumerator Coroutine()
         {
             do
             {
                 if (_target)
+                {
                     _rigidBody2D.MovePosition(_rigidBody2D.position + (Vector2)(_target.transform.position - transform.position).normalized * _speed * SPEED_FACTOR * Time.fixedDeltaTime);
+                    _animator.SetBool("isWalking", true);
+                }
+
                 yield return _waitForFixedUpdate;
             } while (!ValidateDistance());
-            Ended();
+            StopCurrentBehaviour();
+            _animator.SetBool("isWalking", false);
         }
 
-        _currentBehaviour ??= StartCoroutine(MoveCoroutine());
+        _currentBehaviour ??= StartCoroutine(Coroutine());
+    }
+
+    void AttackAction()
+    {
+        IEnumerator Coroutine()
+        {
+            Timer timer = new Timer().Start(3f);
+            do
+            {
+                if (_target)
+                {
+                    _animator.SetTrigger("isAttacking");
+                }
+                yield return _waitForFixedUpdate;
+            } while (!timer.eslaped);
+            StopCurrentBehaviour();
+        }
+
+        _currentBehaviour ??= StartCoroutine(Coroutine());
     }
 
 
