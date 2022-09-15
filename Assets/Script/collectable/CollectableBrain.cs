@@ -3,13 +3,13 @@ using UnityEngine;
 public class CollectableBrain : MonoBehaviour
 {
     [SerializeField] LayerMask _CanPickUp;
+    [SerializeField] GameObject _root;
     [SerializeField] CollectableStats _stats;
-
     private int _usesCount;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (_CanPickUp == (_CanPickUp | (1 << col.gameObject.layer)))
+        if (_CanPickUp == (_CanPickUp | (1 << col.gameObject.layer)) && col.GetComponentInParent<PlayerTag>())
         {
             PickUp(col);
         }
@@ -44,6 +44,6 @@ public class CollectableBrain : MonoBehaviour
         }
 
         // destroy
-        if (--_usesCount <= 0) GameObject.Destroy(this.gameObject);
+        if (--_usesCount <= 0) GameObject.Destroy(_root);
     }
 }
