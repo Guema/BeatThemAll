@@ -1,5 +1,86 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1795982422737019920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1017329295889355062}
+  - component: {fileID: 3099440501569882143}
+  - component: {fileID: 8948276264482054753}
+  m_Layer: 3
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1017329295889355062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795982422737019920}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6515142786860074281}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &3099440501569882143
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795982422737019920}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 12, y: 8.03}
+  m_Direction: 1
+--- !u!114 &8948276264482054753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795982422737019920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c6c0073a3a1d8c42b078a621df54cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colliders2D:
+  - {fileID: 3099440501569882143}
+  _onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  _onTriggerStay:
+    m_PersistentCalls:
+      m_Calls: []
+  _onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1533195403826327546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,6 +198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
+--- !u!4 &6515142786860074281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5705338074799155923, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
+  m_PrefabInstance: {fileID: 1533195403826327546}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6515142787424263589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5705338074012807775, guid: f9b7305e734c6e54f9757af96f737154, type: 3}
@@ -134,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec175cdd533f6d84fb1ad8a3a9a699c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _triggerZone: {fileID: 0}
+  _triggerZone: {fileID: 8948276264482054753}
   _rigidBody2D: {fileID: 0}
   _animator: {fileID: 6515142787901590287}
   _stupidity: 0.25
