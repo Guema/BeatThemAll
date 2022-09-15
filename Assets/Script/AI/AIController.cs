@@ -116,6 +116,13 @@ public class AIController : MonoBehaviour
         _currentBehaviour = null;
     }
 
+    void FaceTarget()
+    {
+        transform.rotation = _target?.transform.position.x < this.transform.position.x ?
+        Quaternion.Euler(0f, -180f, 0f) :
+        Quaternion.Euler(0f, 0f, 0f);
+    }
+
     void MoveAction()
     {
         IEnumerator Coroutine()
@@ -124,6 +131,7 @@ public class AIController : MonoBehaviour
             {
                 if (_target)
                 {
+                    FaceTarget();
                     _rigidBody2D.MovePosition(_rigidBody2D.position + (Vector2)(_target.transform.position - transform.position).normalized * _speed * SPEED_FACTOR * Time.fixedDeltaTime);
                     _animator.SetBool("isWalking", true);
                 }
@@ -146,6 +154,7 @@ public class AIController : MonoBehaviour
             {
                 if (_target)
                 {
+                    FaceTarget();
                     _animator.SetTrigger("isAttacking");
                 }
                 yield return _waitForFixedUpdate;
