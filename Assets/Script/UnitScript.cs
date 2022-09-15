@@ -9,6 +9,10 @@ public class UnitScript : MonoBehaviour, HealthScript.IAttackable, IHasHealth
 {
 
     [SerializeField, ReadOnly] HealthScript _healthScript;
+    HealthScript healthScript
+    {
+        get => _healthScript;
+    }
 
     [SerializeField, BoxGroup("Graphics")] Animator _animator;
     [SerializeField, BoxGroup("Physics")] ColliderListener2D _hitboxListener2D;
@@ -31,8 +35,8 @@ public class UnitScript : MonoBehaviour, HealthScript.IAttackable, IHasHealth
     {
         _healthScript = GetComponent<HealthScript>();
 
-        _animator = gameObject.transform.Find("Render").GetComponentInChildren<Animator>() ?? gameObject.GetComponentInChildren<Animator>();
-        _hitboxListener2D = gameObject.transform.Find("Hitbox").GetComponentInChildren<ColliderListener2D>() ?? gameObject.GetComponentInChildren<ColliderListener2D>();
+        _animator = gameObject.transform.Find("Render")?.GetComponentInChildren<Animator>() ?? gameObject.GetComponentInChildren<Animator>();
+        _hitboxListener2D = gameObject.transform.Find("Hitbox")?.GetComponentInChildren<ColliderListener2D>() ?? gameObject.GetComponentInChildren<ColliderListener2D>();
     }
 
 
