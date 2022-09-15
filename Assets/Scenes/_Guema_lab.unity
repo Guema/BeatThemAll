@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2675818703161263857, guid: 61601602b8cb311418f28e4daeecb7aa, type: 3}
       propertyPath: _speed
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2675818703161263857, guid: 61601602b8cb311418f28e4daeecb7aa, type: 3}
       propertyPath: _animator
@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 1820709230}
     - target: {fileID: 2675818703161263857, guid: 61601602b8cb311418f28e4daeecb7aa, type: 3}
       propertyPath: _stupidity
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 2675818703161263857, guid: 61601602b8cb311418f28e4daeecb7aa, type: 3}
       propertyPath: _rigidBody2D
@@ -1150,6 +1150,22 @@ PrefabInstance:
       propertyPath: m_LinearDrag
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7430053875104571900, guid: 07c016127c58b244faebf8e801495908, type: 3}
+      propertyPath: _attackAction
+      value: 
+      objectReference: {fileID: -5775429041561170056, guid: 12fb268336c69b64fa18bbd2066f6b38, type: 3}
+    - target: {fileID: 7954027982520303278, guid: 07c016127c58b244faebf8e801495908, type: 3}
+      propertyPath: _runAction
+      value: 
+      objectReference: {fileID: 3379518031137357880, guid: 12fb268336c69b64fa18bbd2066f6b38, type: 3}
+    - target: {fileID: 7954027982520303278, guid: 07c016127c58b244faebf8e801495908, type: 3}
+      propertyPath: _jumpAction
+      value: 
+      objectReference: {fileID: -8524641120573590680, guid: 12fb268336c69b64fa18bbd2066f6b38, type: 3}
+    - target: {fileID: 7954027982520303278, guid: 07c016127c58b244faebf8e801495908, type: 3}
+      propertyPath: _sprintAction
+      value: 
+      objectReference: {fileID: 730912522439210673, guid: 12fb268336c69b64fa18bbd2066f6b38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07c016127c58b244faebf8e801495908, type: 3}
 --- !u!114 &7969832533736670130

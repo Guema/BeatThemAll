@@ -12,16 +12,12 @@ public struct Timer
 
     public bool eslaped
     {
-        get => _endTime > Time.time;
+        get => _endTime >= Time.time;
     }
 
-    static public implicit operator bool(Timer timer)
-    {
-        return timer.eslaped;
-    }
-
-    public void Start(float time)
+    public Timer Start(float time)
     {
         _endTime = Time.time + time;
+        return this;
     }
 }
