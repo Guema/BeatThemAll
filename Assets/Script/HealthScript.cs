@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(UnitScript))]
 public partial class HealthScript : MonoBehaviour
 {
-    [SerializeField] Animator _anim;
+    [SerializeField] public Animator _anim;
     [SerializeField] PlayerInput _playerInput;
     [SerializeField] bool _isDead = false;
     [SerializeField] int _maxHealth = 100;

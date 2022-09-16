@@ -53,7 +53,15 @@ public class PlayerCombat : MonoBehaviour
         
         foreach (HealthScript t in targets)
         {
+            t._anim.SetBool("isHitted", true);
             t.DealDamage(damage);
+        }
+        
+        yield return new WaitForSeconds(0.2f);
+
+        foreach (HealthScript t in targets)
+        {
+            t._anim.SetBool("isHitted", false);
         }
     }
 }
