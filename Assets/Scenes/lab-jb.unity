@@ -1473,6 +1473,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2016269246}
     m_Modifications:
+    - target: {fileID: 3036975733829956474, guid: 055839e40ad3d7046ac8b6b46b8d0fb1, type: 3}
+      propertyPath: _maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5647953707755345153, guid: 055839e40ad3d7046ac8b6b46b8d0fb1, type: 3}
       propertyPath: m_Name
       value: RedEnnemy
@@ -1830,6 +1834,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2016269246}
     m_Modifications:
+    - target: {fileID: 3036975733829956474, guid: 688ebc464c0d6c047b872ace3952382f, type: 3}
+      propertyPath: _maxHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5647953707755345153, guid: 688ebc464c0d6c047b872ace3952382f, type: 3}
       propertyPath: m_Name
       value: BlueEnnemy

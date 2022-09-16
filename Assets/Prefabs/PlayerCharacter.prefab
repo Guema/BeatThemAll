@@ -306,6 +306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anim: {fileID: 1478402132365023707}
   _attackAction: {fileID: -5775429041561170056, guid: 12fb268336c69b64fa18bbd2066f6b38, type: 3}
+  _attackDamage: 5
+  _attackDamageDelay: 0.2
   _attackSlowTime: 0.5
 --- !u!114 &7581351766380660173
 MonoBehaviour:

@@ -7,14 +7,20 @@ public class PlayerCombat : MonoBehaviour
 {
     [SerializeField] Animator _anim;
     [SerializeField] InputActionReference _attackAction;
+    [SerializeField,Range(0,10)] int _attackDamage;
+    [SerializeField,Range(0f,3f)] float _attackDamageDelay;
     [SerializeField,Range(0f,10f)] float _attackSlowTime;
-    PlayerMove pmoveScript;
+    PlayerMove _pmoveScript;
+    HealthScript _healthScript;
+    PlayerAttackZone _attackZoneScript;
 
     private void Awake()
     {
         _attackSlowTime = 0.4f;
 
-        pmoveScript = GetComponent<PlayerMove>();
+        _pmoveScript = GetComponent<PlayerMove>();
+        _healthScript = GetComponent<HealthScript>();
+        _attackZoneScript = GetComponentInChildren<PlayerAttackZone>();
     }
 
     void Start()
@@ -30,20 +36,24 @@ public class PlayerCombat : MonoBehaviour
     void AttackStarted(InputAction.CallbackContext cc)
     {
         _anim.SetTrigger("attack");
-        pmoveScript.SetActiveAttackSpeed(true);
+        _pmoveScript.SetActiveAttackSpeed(true);
         StartCoroutine(AttackSlowEffect());
+        StartCoroutine(AttackDamageDelayed(_attackDamage, _attackDamageDelay, _attackZoneScript.GetTargets()));
     }
 
     IEnumerator AttackSlowEffect()
     {
-        float cd = 0;
-        while (cd < _attackSlowTime)
+        yield return new WaitForSeconds(_attackSlowTime);
+        _pmoveScript.SetActiveAttackSpeed(false);
+    }
+
+    IEnumerator AttackDamageDelayed(int damage, float delay, List<HealthScript> targets)
+    {
+        yield return new WaitForSeconds(delay);
+        
+        foreach (HealthScript t in targets)
         {
-            cd += Time.fixedDeltaTime;
-
-            yield return new WaitForFixedUpdate();
+            t.DealDamage(damage);
         }
-
-        pmoveScript.SetActiveAttackSpeed(false);
     }
 }

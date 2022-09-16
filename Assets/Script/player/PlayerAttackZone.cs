@@ -30,4 +30,9 @@ public class PlayerAttackZone : MonoBehaviour
 
         _targets.Remove(col.GetComponentInParent<HealthScript>());
     }
+
+    public List<HealthScript> GetTargets()
+    {
+        return _targets;
+    }
 }
